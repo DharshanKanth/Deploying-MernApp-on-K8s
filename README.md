@@ -47,8 +47,7 @@ This project is designed to help beginners learn Kubernetes by deploying a ready
 mern-k8s-deployment/ ├── k8s/ │ ├── deployment.yaml # Kubernetes deployment configuration for the MERN app │ ├── service.yaml # Service configuration for exposing the MERN app │ ├── secrets.yaml # Secrets configuration for managing MongoDB credentials │ └── nodeport.yaml # NodePort configuration for external access ├── docker/ │ ├── Dockerfile # Dockerfile for building the MERN app container │ └── ... # Additional Docker configuration files (if any) ├── README.md # This file └── .gitignore # Specifies files and directories to be ignored by Git
 
 yaml
-Copy
-Edit
+
 
 ---
 
@@ -75,23 +74,19 @@ cd mern-k8s-deployment
 2. Start Minikube
 Start your local Kubernetes cluster using Minikube:
 
-bash
-Copy
-Edit
+bash:
 minikube start
 If you want to use Minikube’s Docker daemon (so that images are available to Minikube), run:
 
-bash
-Copy
-Edit
+bash:
 eval $(minikube docker-env)
+
 3. Build the Docker Image
 Build the Docker image for the MERN app:
 
-bash
-Copy
-Edit
+bash:
 docker build -t yourusername/mern-app:latest -f docker/Dockerfile .
+
 4. Apply Kubernetes Configurations
 Deploy the application components by applying the YAML configuration files in the following order:
 
